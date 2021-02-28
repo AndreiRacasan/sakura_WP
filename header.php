@@ -23,23 +23,16 @@
       <div id="navigation" class="collapse navbar-collapse flex-column">
         <img class="mb-3 mx-auto logo" src="img/logo.png" alt="logo">
 
-        <ul class="navbar-nav flex-column text-center">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="post.html">Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="page.html">Page</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="archive.html">Archive</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
+        <?php
+        wp_nav_menu(
+          array(
+            'menu' => 'primary',
+            'container' => '',
+            'theme_location' => 'primary',
+            'items_wrap' => '<ul id="" class="navbar-nav flex-column text-center">%3$s</ul>'
+          )
+        );
+        ?>
 
       </div>
     </nav>
